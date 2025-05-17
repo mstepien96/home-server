@@ -1,0 +1,15 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+background:
+  image: /images/background-image-papiroen.jpg
+  opacity: 25
+  brightness: 50
+  blur: 50
+
+cardBlur: md
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

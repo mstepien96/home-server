@@ -1,0 +1,20 @@
+services:
+  # Prowlarr - Indexer for PVR apps
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    network_mode: "service:gluetun"
+    # networks:
+      # - default
+    # ports:
+    #  - "9696:9696"
+    volumes:
+      - $DOCKERDIR/appdata/prowlarr:/config
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      WEBUI_PORT: 9696

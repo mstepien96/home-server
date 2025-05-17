@@ -1,0 +1,22 @@
+services:
+  # Radarr - Movie management
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest 
+    container_name: radarr
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    network_mode: "service:gluetun"
+    # networks:
+    #  - default
+    # ports:
+    #  - "7878:7878"
+    volumes:
+      - $DOCKERDIR/appdata/radarr:/config
+      - $DATADIR/data/media/movies:/data/movies1
+      - $DATADIR/downloads:/data/downloads 
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      WEBIU_PORT: 7878

@@ -1,0 +1,29 @@
+services:
+  # Gluetun - VPN Client for Docker Containers and More
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    hostname: mediagluetun
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    volumes:
+      - $DOCKERDIR/appdata/gluetun:/gluetun
+    ports:
+      - "6881:6881"     # qBittorent
+      - "6881:6881/udp" # qBittorent
+      - "8080:8080" # qBittorrent
+      - "9696:9696" # Prowlarr
+      - "6767:6767" # Bazarr
+      - "7878:7878" # Radarr
+      - "8989:8989" # Sonarr
+    environment:
+      FIREWALL_OUTBOUND_SUBNETS: 172.18.0.0/24
+      TZ: $TZ
+      # Wireguard
+      VPN_SERVICE_PROVIDER: surfshark
+      VPN_TYPE: wireguard
+      WIREGUARD_PRIVATE_KEY: $SURFSHARK_WG_PRIVATE_KEY
+      WIREGUARD_ADDRESSES: 10.14.0.2/16

@@ -1,0 +1,103 @@
+- Media:
+    - Audiobookshelf:
+        href: http://10.0.0.252:13378
+        icon: audiobookshelf.png
+        description: Audiobooks and Podcasts Manager
+    - Jellyfin:
+        href: http://10.0.0.252:8096
+        icon: jellyfin.png
+        description: Media Server
+    - Jellyseerr:
+        href: http://10.0.0.252:5055
+        icon: jellyseerr.png
+        description: Media Library Request Manager
+
+- Downloads:
+    - qBittorrent:
+        href: http://10.0.0.252:8080
+        icon: qbittorrent.png
+        description: Torrent Downloader
+
+- Subtitles & Indexers:
+    - Bazarr:
+        href: http://10.0.0.252:6767
+        icon: bazarr.png
+        description: Subtitles Manager
+    - Prowlarr:
+        href: http://10.0.0.252:9696
+        icon: prowlarr.png
+        description: Indexer Manager
+    - Radarr:
+        href: http://10.0.0.252:7878
+        icon: radarr.png
+        description: Movie Manager
+    - Sonarr:
+        href: http://10.0.0.252:8989
+        icon: sonarr.png
+        description: TV Shows Manager
+
+- System:
+    - Dozzle:
+        href: http://10.0.0.252:8081
+        icon: dozzle.png
+        description: Real-time Docker Log Viewer
+    - FileBrowser:
+        href: http://10.0.0.252:80
+        icon: filebrowser.png
+        description: Files Manager
+    - Portainer:
+        href: http://10.0.0.252:9000
+        icon: portainer.png
+        description: WebUI for Containers
+
+- Media (from outside):
+    - Audiobookshelf:
+        href: http://10.242.0.252:13378
+        icon: audiobookshelf.png
+        description: Audiobooks and Podcasts Manager
+    - Jellyfin:
+        href: http://10.242.0.252:8096
+        icon: jellyfin.png
+        description: Media Server
+    - Jellyseerr:
+        href: http://10.242.0.252:5055
+        icon: jellyseerr.png
+        description: Media Library Request Manager
+
+- Downloads (from outside):
+    - qBittorrent:
+        href: http://10.242.0.252:8080
+        icon: qbittorrent.png
+        description: Torrent Downloader
+
+- Subtitles & Indexers (from outside):
+    - Bazarr:
+        href: http://10.242.0.252:6767
+        icon: bazarr.png
+        description: Subtitles Manager
+    - Prowlarr:
+        href: http://10.242.0.252:9696
+        icon: prowlarr.png
+        description: Indexer Manager
+    - Radarr:
+        href: http://10.242.0.252:7878
+        icon: radarr.png
+        description: Movie Manager
+    - Sonarr:
+        href: http://10.242.0.252:8989
+        icon: sonarr.png
+        description: TV Shows Manager
+
+- System (from outside):
+    - Dozzle:
+        href: http://10.242.0.252:8081
+        icon: dozzle.png
+        description: Real-time Docker Log Viewer
+    - FileBrowser:
+        href: http://10.242.0.252:80
+        icon: filebrowser.png
+        description: Files Manager
+    - Portainer:
+        href: http://10.242.0.252:9000
+        icon: portainer.png
+        description: WebUI for Containers

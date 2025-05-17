@@ -1,0 +1,16 @@
+services:
+  # NextCloud - Cloud Storage
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    volumes:
+      - $DOCKERDIR/appdata/nextcloud:/config
+      - $DATADIR/data/nextcloud:/data
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped

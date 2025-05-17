@@ -1,0 +1,16 @@
+services:
+  # FileBrowser - File Management
+  filebrowser:
+    image: hurlenko/filebrowser
+    container_name: filebrowser
+    user: "${PUID}:${PGID}"
+    ports:
+      - 80:8080
+    volumes:
+      - $DATADIR:/data
+      - $DOCKERDIR/appdata/filebrowser:/config
+    environment:
+      - FB_BASEURL=/filebrowser
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true

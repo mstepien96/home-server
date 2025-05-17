@@ -1,0 +1,22 @@
+services:
+  # Homepage - Application Dashboard
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    networks:
+      - socket_proxy
+      - default
+    ports:
+      - "3000:3000"
+    volumes:
+      - $DOCKERDIR/appdata/homepage:/app/config
+      - /home/michal/images:/app/public/images
+      - /mnt/hdd1/dummy-mount:/app/dummy-mount
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      HOMEPAGE_ALLOWED_HOSTS: "*"

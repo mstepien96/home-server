@@ -1,0 +1,38 @@
+networks:
+  default:
+    driver: bridge
+  socket_proxy:
+    name: socket_proxy
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+secrets:
+  watchtower:
+    file: $SECRETSDIR/watchtower
+
+include:
+  ### SERVICES
+  
+  # UTILITIES
+  - compose/watchtower.yml
+  - compose/dozzle.yml
+  - compose/filebrowser.yml
+  - compose/gluetun.yml
+  - compose/homepage.yml
+  - compose/portainer.yml
+  - compose/socket-proxy.yml
+  - compose/zerotier.yml
+
+  # MEDIA
+  - compose/audiobookshelf.yml
+  - compose/bazarr.yml
+  - compose/immich.yml
+  - compose/jellyseerr.yml
+  - compose/jellyfin.yml
+    #- compose/nextcloud.yml
+  - compose/prowlarr.yml
+  - compose/qbittorrent.yml
+  - compose/radarr.yml
+  - compose/sonarr.yml

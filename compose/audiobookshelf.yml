@@ -1,0 +1,19 @@
+services:
+  # AudioBookShelf - Audiobooks and Podcasts
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      - "13378:80"
+    volumes:
+      - $DATADIR/data/media/audiobooks:/audiobooks
+      - $DATADIR/data/media/podcasts:/podcasts
+      - $DOCKERDIR/appdata/audiobookshelf:/config
+      - $DOCKERDIR/appdata/audiobookshelf:/metadata
+    environment:
+      - TZ=$TZ

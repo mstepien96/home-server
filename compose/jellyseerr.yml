@@ -1,0 +1,17 @@
+services:
+  # Jellyseerr - Requester for Jellyfin
+  jellyseerr:
+    image: ghcr.io/fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      - 5055:5055
+    volumes:
+      - $DOCKERDIR/appdata/config:/app/config
+    environment:
+      - LOG_LEVEL=info
+      - TZ=$TZ
