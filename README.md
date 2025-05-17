@@ -9,7 +9,6 @@ DATADIR="/mnt/hdd1"
 HOSTNAME="myserver"
 SECRETSDIR="/home/michal/docker/secrets"
 SURFSHARK_WG_PRIVATE_KEY="PRIVATEKEEEEEEYY"
-# IMMICH
 UPLOAD_LOCATION=/mnt/hdd1/data/photos
 DB_DATA_LOCATION=/home/michal/postgres
 IMMICH_VERSION=release
